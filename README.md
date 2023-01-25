@@ -15,7 +15,7 @@ Inital set-up:
 - Go to VS -> create new project -> search for Integration Service Project -> add name and location -> create.
 - Click on Solution Explorer -> R-click project folder -> add -> new item -> DtsPackage -> add. Package is the most important window of SSIS
 - Open the new Package.Dts[Design]. This contains 5 tabs: Control Flow, Data Flow, Parameters, Event Handlers, Package Explorer
-- ETL. Every E and L needs a Connection Manager
+- ETL. Every Extract and Load needs a Connection Manager
 - In Control Flow tab (each item in toolbox list called Task):
   - Drag a Data Flow Task from the toolbox into the Control Flow -> double click Data Flow -> select Data Flow Task.
 - In Data Flow tab (each item in toolbox list called Component):
@@ -27,6 +27,6 @@ Inital set-up:
 ![image](https://user-images.githubusercontent.com/110323703/214512969-64feca81-cf41-4b43-8730-0d7c48c8db34.png)
 ![image](https://user-images.githubusercontent.com/110323703/214513149-99e4c533-10b1-4841-ba4f-9e73c669eb3a.png)
 ![image](https://user-images.githubusercontent.com/110323703/214513625-a814a7d9-27fc-4087-a640-54382f89285b.png)
-
+- Moving to Transformation: Why need to transform data? Convert data type for output data
 
 
