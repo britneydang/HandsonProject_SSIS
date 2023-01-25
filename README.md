@@ -1,5 +1,5 @@
 # Hands on Project 2: SSIS
-Project description: This project will mainly focus on SQL Server Integration Services foe ETL purposes.
+Project description: This project will mainly focus on SQL Server Integration Services for ETL tasks.
 
 Required instalation:
 - SQL Server Developer 2022
