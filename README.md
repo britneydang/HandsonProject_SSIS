@@ -28,6 +28,7 @@ Inital set-up:
 ![image](https://user-images.githubusercontent.com/110323703/214513149-99e4c533-10b1-4841-ba4f-9e73c669eb3a.png)
 ![image](https://user-images.githubusercontent.com/110323703/214513625-a814a7d9-27fc-4087-a640-54382f89285b.png)
   - Moving to Transformation: Why need to transform data? Convert data type for output data: in data flow tab, delete the old link, drag to add the Data Conversion component between Source and Destination component, add links -> 
+
 ![image](https://user-images.githubusercontent.com/110323703/214519983-827951ef-b4d2-4840-b92d-36a8f58bc413.png)
  
 
