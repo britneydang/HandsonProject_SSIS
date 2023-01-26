@@ -24,17 +24,19 @@ Inital set-up:
   - Create a Source: Drag Source Assistant in -> select Source Type SQL Server and Connection Manager OR Under Other Source, drag OLE DB Source in -> need to connect it to a table -> R-click Edit -> Source Editor pop-up -> Connection Manager: select Data Access Mode and Table Name dbo.[Customer] -> Columns: can select/unselect any columns and edit the column name -> Ok (red X will disappear) -> Click Start to execute. After finishing and view the output, click stop debug to back to design mode.
   - Now need to load data: I want to load data from dbo.[Customer] (selective columns) into a blank table name dbo.Output01.
   - Create a Destination: Drag Destination Assistant in -> select Source Type SQL Server and Connection Manager OR Under Other Destination, drag OLE DB Destination in -> Create a link by connecting a blue line from Source to Destination -> Destination Editor pop-up -> Connection Manager: select Data Access Mode and output table name dbo.[Output01] -> Mapping: check -> Ok. Table dbo.[Output01] in SSMS currently has no data in it. Click Start -> there are 847 rows of data loading from source component to destination component -> stop debugging. Check in SSMS, execute table dbo.[Output01], it is now having 847 records.
+
 ![image](https://user-images.githubusercontent.com/110323703/214512969-64feca81-cf41-4b43-8730-0d7c48c8db34.png)
 ![image](https://user-images.githubusercontent.com/110323703/214513149-99e4c533-10b1-4841-ba4f-9e73c669eb3a.png)
 ![image](https://user-images.githubusercontent.com/110323703/214513625-a814a7d9-27fc-4087-a640-54382f89285b.png)
-  - Moving to Transformation: Why need to transform data? 
-    - Transformation - Data Conversion: Convert data type for output data: in data flow tab, delete the old link, drag to add the Data Conversion component between Source and Destination component, add links -> R-click Dta Conversion -> Edit -> Conversion Editor pop-up -> choose the avaialble input column, select the desired data type for the output column -> change data type for CustomerId from DT_I2 to DT_STR length = 5 -> Ok -> Click Start to Execute/Stop -> Check the newly loaded data in table dbo.[Output02] in SSMS. The input and output properties can be viewed in the Advanced Editor for OLE DB Destination.
+- Moving to Transformation: Why need to transform data? 
+    - Transformation Data Conversion: Convert data type for output data: in data flow tab, delete the old link, drag to add the Data Conversion component between Source and Destination component, add links -> R-click Dta Conversion -> Edit -> Conversion Editor pop-up -> choose the avaialble input column, select the desired data type for the output column -> change data type for CustomerId from DT_I2 to DT_STR length = 5 -> Ok -> Click Start to Execute/Stop -> Check the newly loaded data in table dbo.[Output02] in SSMS. The input and output properties can be viewed in the Advanced Editor for OLE DB Destination.
 
 ![image](https://user-images.githubusercontent.com/110323703/214519983-827951ef-b4d2-4840-b92d-36a8f58bc413.png)
 ![image](https://user-images.githubusercontent.com/110323703/214768489-7e29d314-ddf5-460d-af3e-d683acbda77a.png)
-    - Transformation - Derived Column: in data flow tab, delete the old Data Conversion component, drag Derived Column component in the middle -> edit -> Derived Column editor pop-up -> drag CustomerID in, rename the derived column name CustomerIDNew, select Add New in derived column. Look for the desired data type in Type Casts above and manually type in the Expression -> Type Casts is (DT_STR, length, code_page), type in Expression (DT_STR, 5, 1252)[CustomerID] -> Ok. Need to edit the mapping in OLE DB Destination -> Mappings -> in the input column, switch CustomerID to CustomerIDNew
-    
+    - Transformation Derived Column: in data flow tab, delete the old Data Conversion component, drag Derived Column component in the middle -> edit -> Derived Column editor pop-up -> drag CustomerID in, rename the derived column name CustomerIDNew, select Add New in derived column. Look for the desired data type in Type Casts above and manually type in the Expression -> Type Casts is (DT_STR, length, code_page), type in Expression (DT_STR, 5, 1252)[CustomerID] -> Ok. Need to edit the mapping in OLE DB Destination -> Mappings -> in the input column, switch CustomerID to CustomerIDNew.
+
 ![image](https://user-images.githubusercontent.com/110323703/214771792-b2166f9c-1a0b-4297-8180-f7fab668c1fa.png)
+    - Transformation Aggregation: 
 
 
  
