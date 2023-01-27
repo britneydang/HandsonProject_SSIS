@@ -36,7 +36,7 @@ Inital set-up:
     - Transformation Derived Column: in data flow tab, delete the old Data Conversion component, drag Derived Column component in the middle -> edit -> Derived Column editor pop-up -> drag CustomerID in, rename the derived column name CustomerIDNew, select Add New in derived column. Look for the desired data type in Type Casts above and manually type in the Expression -> Type Casts is (DT_STR, length, code_page), type in Expression (DT_STR, 5, 1252)[CustomerID] -> Ok. Need to edit the mapping in OLE DB Destination -> Mappings -> in the input column, switch CustomerID to CustomerIDNew.
 
 ![image](https://user-images.githubusercontent.com/110323703/214771792-b2166f9c-1a0b-4297-8180-f7fab668c1fa.png)
-    - Transformation Aggregation: 
+    - Transformation Aggregation: Starting with the OLE DB Source component -> drag Aggregate component in -> Editor pop-up -> 
 
 
  
