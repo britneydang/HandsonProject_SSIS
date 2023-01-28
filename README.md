@@ -43,6 +43,12 @@ Inital set-up:
 
 ![image](https://user-images.githubusercontent.com/110323703/215239400-ea45c961-9113-46a7-b70b-797fd3cdc320.png)
 ![image](https://user-images.githubusercontent.com/110323703/215239411-742328bb-e617-4d1c-b4f4-ac1ca5f10e1b.png)
+		- Transformation Multi-Cast: I want to distribute from one input into more than one outputs: Starting with the OLE DB Source component -> drag Multi-Cast -> drag two OLE DB Destination components (Output01 and Output02) -> Mappings: select appropriate name for <ignore> cell -> Ok
+
+![image](https://user-images.githubusercontent.com/110323703/215240014-dbb1114e-1731-489f-a4fa-aa15efae33b3.png)
+
+
+
 
 
 
