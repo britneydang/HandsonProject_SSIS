@@ -20,6 +20,7 @@ Inital set-up:
   - Drag a Data Flow Task from the toolbox into the Control Flow -> double click Data Flow -> select Data Flow Task.
 - In Data Flow tab (each item in toolbox list called Component):
   - Create a Connection Manager: R-click Connection Managers in the bottom -> New OLE DB Connection... -> New -> server name will be similar to one is input in SSMS earlier, select the same Authentication and Database name "SSIS" -> Ok -> Rename it to SSIS SQL Server.
+
 ![image](https://user-images.githubusercontent.com/110323703/214494695-4fab8a9c-ce9d-486b-88d9-f4ba3cc765f9.png)
   - Create a Source: Drag Source Assistant in -> select Source Type SQL Server and Connection Manager OR Under Other Source, drag OLE DB Source in -> need to connect it to a table -> R-click Edit -> Source Editor pop-up -> Connection Manager: select Data Access Mode and Table Name dbo.[Customer] -> Columns: can select/unselect any columns and edit the column name -> Ok (red X will disappear) -> Click Start to execute. After finishing and view the output, click stop debug to back to design mode.
   - Now need to load data: I want to load data from dbo.[Customer] (selective columns) into a blank table name dbo.Output01.
@@ -42,6 +43,7 @@ Inital set-up:
 ![image](https://user-images.githubusercontent.com/110323703/215239226-99ff2949-44b8-46a8-b9d0-fe52fb262aea.png)
 
 ![image](https://user-images.githubusercontent.com/110323703/215239400-ea45c961-9113-46a7-b70b-797fd3cdc320.png)
+
 ![image](https://user-images.githubusercontent.com/110323703/215239411-742328bb-e617-4d1c-b4f4-ac1ca5f10e1b.png)
 - Transformation Multi-Cast: Multi-Cast saves time in reading data and then transmitting it into seperate operations. I want to distribute from one input into more than one outputs: Starting with the OLE DB Source component -> drag Multi-Cast -> drag two OLE DB Destination components (Output01 and Output02) -> Mappings: select appropriate name for <ignore> cell -> Ok
 
@@ -55,7 +57,11 @@ Inital set-up:
   - Redirect Row -> Run -> It will run and eliminate the NULL Title (NULL Title records will not in either tables). I can store these records in the Derived Column -> connect red link from Conditional Split to Derived Column -> run -> 7 NULL Title rows will be in derived column.
 
 ![image](https://user-images.githubusercontent.com/110323703/215242401-a868d258-f174-4e34-9a71-58a25df11f35.png)
-- Transformation Row Sampling and Percentage Sampling
+- Transformation Row Sampling: Starting with the OLE DB Source component -> Row Sampling component -> two OLE DB Destination components (Selected and Unselected) -> Editor: enter number of rows, specify random seed. Selected table is randomly selected.
+- Transformation Percentage Sampling: Starting with the OLE DB Source component -> Percentage Sampling component -> two OLE DB Destination components (Selected and Unselected) -> enter percentage of rows
+- Transformation Sorting: Sort component can be added after OLE DB Source, added between the Aggregate component and OLE DB Destination -> Sort Transformation Editor -> select input column(s), sort type (asc or desc), and sort order.
+- Extract: adding an Excel source: Source Assistant -> select Excel/Flat File -> New -> Browse file -> Ok -> Editor -> Connection Manager: select which Sheet -> Ok. If I want to extract a flat file and have an excel destination, I have to add data conversion in the middle.
+- Transformation Union All: 
 
 
 
