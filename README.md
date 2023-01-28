@@ -46,6 +46,16 @@ Inital set-up:
 - Transformation Multi-Cast: Multi-Cast saves time in reading data and then transmitting it into seperate operations. I want to distribute from one input into more than one outputs: Starting with the OLE DB Source component -> drag Multi-Cast -> drag two OLE DB Destination components (Output01 and Output02) -> Mappings: select appropriate name for <ignore> cell -> Ok
 
 ![image](https://user-images.githubusercontent.com/110323703/215240014-dbb1114e-1731-489f-a4fa-aa15efae33b3.png)
+- Transformation Conditional Split: Depend on the content of data, I can split the data from one source into two source with different conditions -> OLE DB Source component -> Conditional Split component -> two OLE DB Destination components (Output01 and Output02) -> edit the Split: in case 1, I want the content only has Title = Mr. and the rest of the content doesnt have Title = Mr. -> In the Conditional Split Editor, drag Title down, in condition [Title]=="Mr.", update output name and default output name (different from the condition) -> add link -> select output name for each OLE DB Destination -> RUN and it has ERRORS. There are errors because the content Title has 7 NULL.
+
+![image](https://user-images.githubusercontent.com/110323703/215241097-d2a67964-a835-4899-9890-7ee3e3ba845b.png)
+- Error Handling: Go to Conditional Split Editor -> Configure Error Output -> there are 3 options:
+  - Fail Component -> Run -> It will fail
+  - Ignore Failure -> Run -> It will run and ignore any failures, the NULL Title will be in the "Title is not Mister" table
+  - Redirect Row -> Run -> It will run and eliminate the NULL Title (NULL Title records will not in either tables). I can store these records in the Derived Column -> connect red link from Conditional Split to Derived Column -> run -> 7 NULL Title rows will be in derived column.
+
+![image](https://user-images.githubusercontent.com/110323703/215242401-a868d258-f174-4e34-9a71-58a25df11f35.png)
+- Transformation Row Sampling and Percentage Sampling
 
 
 
