@@ -1,5 +1,5 @@
 # Hands on Project 2: ETL Using SSIS
-Project description: This project will mainly focus on SQL Server Integration Services for ETL tasks.
+Project description: This project will mainly focus on SQL Server Integration Services for basic ETL tasks.
 
 Required instalation:
 - SQL Server Developer 2022
@@ -64,10 +64,14 @@ Inital set-up:
 - Transformation - Union All: two or more input sources go into one output destination. I can union an Excel source and a flat file source together. Remember to add data conversion if needed.
 - Transformation - Merge: it is similar to Union All. It allows two inputs but both inputs need to be sorted first before moving to a merge component: Drag two Flat File Source components -> New -> Browse to add text file Source01 and Source02 -> add two Data Conversion to convert AddressID from STR to Integer DT_I4 -> add two Sort components -> Sort Editor -> Sort by AddressID, make sure select correct Pass Through columns, Input Column and Sort Order number -> drag Merge component -> there will be a mapping error from Sort component to Merge component. It happens because I have changed the sources earlier -> R-click the link and Resolve References -> Delete Unmapped Input Column -> go to Merge Editor, select appropriate Merge Input -> drag Derived Column instead of Destination for easier view. Enable Data Viewer to see result. Address ID is sorted in ascending order (data type is integer, not string).
 
+![image](https://user-images.githubusercontent.com/110323703/215305808-515a35d8-e36d-4d57-af16-1c00e9f648cb.png)
+![image](https://user-images.githubusercontent.com/110323703/215305832-646fec57-b484-499e-85de-076da368caf1.png)  
 ![image](https://user-images.githubusercontent.com/110323703/215305685-e722b2b9-3527-431c-8d29-745f942311f2.png)
 ![image](https://user-images.githubusercontent.com/110323703/215305738-9baae165-2a6f-4db1-b204-f60d0bf26058.png)
 - Transformation - Audit: provide additional columns with information if selected in the Audit Transfomation Editor. For example: User Name, Task Name, Machine Name, etc. 
 - Other Load: different destinations besides OLE DB, Flat File, Excel, remainders are ADO.NET (used for programming language .NET Framework), Analysis Services Connection Manager (SSAS), File Connection Manager, SSIS Connection Manager.
+- Variable is an object, a container that stores a number, a string, a file, a table set.
+- Transformation - Row Count: count rows from the result table. Have to use variable in conjunction with Row Count component -> drag Row Count before the result table -> click on Variable cube -> Add -> Name the variable -> Close Variable-> double click to Assign the Row Count to a variable.  
 
 
 
