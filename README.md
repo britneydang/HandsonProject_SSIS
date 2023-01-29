@@ -8,7 +8,7 @@ Required instalation:
 - SSIS package in VS 2022
 
 Step by step:
-Inital set-up:
+Initial set-up:
 - Go to SSMS -> create new database -> add database name "SSIS" -> OK -> select newly created database SSIS -> write script to Create Table and Insert Into statements -> Execute.
 
 ![image](https://user-images.githubusercontent.com/110323703/214485514-5cdf3d35-3270-4ce9-bc8c-e010249a1ce4.png)
@@ -73,7 +73,7 @@ Inital set-up:
 - Variable is an object, a container that stores a number, a string, a file, a table set.
 - Transformation - Row Count: count rows from the result table. Have to use variable in conjunction with Row Count component -> drag Row Count before the result table -> click on Variable cube -> Add -> Name the variable -> Close Variable-> double click to Assign the Row Count to a variable.  
 
-
+* COMPLETED *
 
 
 
