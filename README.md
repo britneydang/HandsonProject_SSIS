@@ -73,7 +73,7 @@ Initial set-up:
 - Variable is an object, a container that stores a number, a string, a file, a table set.
 - Transformation - Row Count: count rows from the result table. Have to use variable in conjunction with Row Count component -> drag Row Count before the result table -> click on Variable cube -> Add -> Name the variable -> Close Variable-> double click to Assign the Row Count to a variable.  
 
-~ COMPLETED ~
+COMPLETED
 
 
 
