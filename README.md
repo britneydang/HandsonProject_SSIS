@@ -1,5 +1,5 @@
-# Learning: ETL Using SSIS
-Description: Using SQL Server Integration Services for basic ETL tasks (Data Flows).
+# Hands on Project 2: ETL Using SSIS
+Project description: This project is mainly focus on using SQL Server Integration Services for basic ETL tasks (Data Flows).
 
 Required installation:
 - SQL Server Developer 2022
