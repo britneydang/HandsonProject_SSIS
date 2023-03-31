@@ -1,4 +1,4 @@
-# Hands on Project 2: ETL Using SSIS
+# Self-Learning: ETL Using SSIS
 Project description: This project is mainly focus on using SQL Server Integration Services for basic ETL tasks (Data Flows).
 
 Required installation:
